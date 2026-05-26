@@ -3,7 +3,7 @@ import requests
 import hashlib
 import time
 
-BOT_TOKEN = "8451988332:AAEJS9_L8CZTbINIWkBkOnwHHS-vpbY9xvw"
+BOT_TOKEN = "8451988332:AAEJS9_L8CZTbINIWkBkOnwHHS-vpbY9xvw""
 VT_API_KEY = "771e86962f15f9a2bc4fd49ea82613d03c3f8f4f30b2d74f209d0562bd87ae53"
 
 bot = telebot.TeleBot(BOT_TOKEN)
