@@ -1,7 +1,7 @@
 import telebot
 import requests
 import hashlib
-import time
+import times
 
 BOT_TOKEN = "8451988332:AAEJS9_L8CZTbINIWkBkOnwHHS-vpbY9xvw"
 VT_API_KEY = "771e86962f15f9a2bc4fd49ea82613d03c3f8f4f30b2d74f209d0562bd87ae53"
@@ -12,6 +12,9 @@ bot = telebot.TeleBot(BOT_TOKEN)
 def get_file_hash(file_bytes):
     return hashlib.sha256(file_bytes).hexdigest()
 
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    bot.reply_to(message, "Salom, man antivirus botman. Manga fayl yuboring virusni aniqlab beraman")
 
 @bot.message_handler(content_types=['document'])
 def handle_file(message):
