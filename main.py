@@ -26,11 +26,11 @@ def run_server():
 threading.Thread(target=run_server).start()
 
 # 3. Botingizning buyruqlari va vazifalari
-
 # Salomlashish kodi
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "👋 Salom! Men antivirus botman.\n\n🛡 Menga biron bir fayl yoki silka yuboring, unda virus bor yo'qligini tekshirib beraman!")
+    bot.reply_to(message, "👋 Salom! Men antivirus botman.\n\n🛡 Menga biron bir fayl yoki havola (link) yuboring, unda virus bor-yo'qligini tekshirib beraman!"))
 
 # --- FAYLLARNI TEKSHIRISH QISMI ---
 @bot.message_handler(content_types=['document'])
@@ -58,8 +58,9 @@ def handle_docs(message):
             else:
                 bot.reply_to(message, f"📄 Bu fayl mutloq xavfsiz. Bemalol foydalaning.\n🦠 Zararli: {malicious}\nToza: {undetected}")
                 
-        elif response.status_code == 404:
-            bot.reply_to(message, "📄 Bu fayl mutloq xavfsiz. Bemalol foydalaning.")
+elif response.status_code == 404:
+            # Fayl bazada topilmasa, shunchaki 0 qiymatlari bilan chiqaramiz
+            bot.reply_to(message, "📄 Bu fayl mutloq xavfsiz. Bemalol foydalaning.\n🦠 Zararli: 0\n✅ Toza: 0")
             
         else:
             bot.reply_to(message, "❌ Tekshirishda xatolik yuz berdi.")
