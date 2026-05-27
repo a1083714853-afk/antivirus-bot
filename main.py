@@ -30,7 +30,7 @@ threading.Thread(target=run_server).start()
 # Salomlashish kodi
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "👋 Salom! Men antivirus botman.\n\n🛡 Menga biron bir **fayl** yoki **havola (link)** yuboring, unda virus bor-yo'qligini tekshirib beraman!")
+    bot.reply_to(message, "👋 Salom! Men antivirus botman.\n\n🛡 Menga biron bir fayl yoki silka yuboring, unda virus bor yo'qligini tekshirib beraman!")
 
 # --- FAYLLARNI TEKSHIRISH QISMI ---
 @bot.message_handler(content_types=['document'])
