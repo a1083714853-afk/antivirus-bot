@@ -6,7 +6,7 @@ from flask import Flask
 import threading
 
 # 1. Sozlamalar
-BOT_TOKEN = "8451988332:AAEzIPiJx2VrFMwNJtbsl8haP5iSlGEJJX4"
+BOT_TOKEN = "8840155220:AAFdyEZXxsVDk3cCEscbZCRoW0DDba-z21E"
 VT_API_KEY = "771e86962f15f9a2bc4fd49ea82613d03c3f8f4f30b2d74f209d0562bd87ae53"
 
 bot = telebot.TeleBot(BOT_TOKEN)
